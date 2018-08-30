@@ -572,7 +572,11 @@ void show_image_cv(image p, const char *name, IplImage *disp)
 }
 #endif
 
+#ifdef OPENCV
 int show_image(image p, const char *name, int ms)
+#else
+int show_image(image p, const char *name)
+#endif
 {
 #ifdef OPENCV
     IplImage *disp = cvCreateImage(cvSize(p.w,p.h), IPL_DEPTH_8U, p.c);

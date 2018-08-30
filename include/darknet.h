@@ -710,7 +710,11 @@ int resize_network(network *net, int w, int h);
 void free_matrix(matrix m);
 void test_resize(char *filename);
 void save_image(image p, const char *name);
+#ifdef OPENCV
 int show_image(image p, const char *name, int ms);
+#else
+int show_image(image p, const char *name);
+#endif
 image copy_image(image p);
 void draw_box_width(image a, int x1, int y1, int x2, int y2, int w, float r, float g, float b);
 float get_current_rate(network *net);
